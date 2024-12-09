@@ -12,7 +12,7 @@ const Home = observer(() => {
     const now = dayjs();
     let finish = dayjs().hour(18).minute(0).second(0);
     let oneDay = 4.5 * 60 * 60;
-    if (now.hour() <= 11 && now.minute() <= 30) {
+    if (now.hour() <= 11 || (now.hour() === 11 && now.minute() <= 30)) {
       finish = dayjs().hour(11).minute(30).second(0);
       oneDay = 2.5 * 60 * 60;
     }
@@ -40,10 +40,10 @@ const Home = observer(() => {
     <div
       className="home__container"
       onMouseDown={() => {
-        window.customAPI.publishMainWindowOperateMessage({ event: "homeDragWindowStart" });
+        customAPI.publishMainWindowOperateMessage({ event: "homeDragWindowStart" });
       }}
       onMouseUp={() => {
-        window.customAPI.publishMainWindowOperateMessage({ event: "homeDragWindowEnd" });
+        customAPI.publishMainWindowOperateMessage({ event: "homeDragWindowEnd" });
       }}>
       <div className="home__wave" style={{ transform: `translateY(${calcTranslate(progress)}%)` }}>
         <div></div>

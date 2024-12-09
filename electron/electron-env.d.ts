@@ -24,7 +24,7 @@ declare namespace NodeJS {
 declare let nodeEnv: { process: NodeJS.Process };
 
 declare let customAPI: {
-  publishMainWindowOperateMessage: (info: { event: string; data: Recordable }) => void;
+  publishMainWindowOperateMessage: (info: { event: string; data?: Recordable }) => void;
 };
 
 declare let electronAPI: {
