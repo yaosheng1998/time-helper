@@ -8,11 +8,6 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
-  "build": {
-    "mac": {
-      "icon": "./public/app-logo.icns"
-    }
-  },
   "dependencies": {
     "ahooks": "^3.7.10",
     "antd": "^5.16.1",
